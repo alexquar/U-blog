@@ -29,3 +29,36 @@ const os = require('os') //built in os node file
 -to get home dir 
     -os.homedir()
 
+//filesystem
+const fs = require('fs')
+
+/reading filesystem
+fs.readFile('relativepath', (err,data)=>{
+if(err){
+    console.log(err)
+}
+//do something with data.toString()
+})
+
+/writing file
+fs.writeFile('relativefilepath','text to write', ()=>{
+
+})
+
+/DIRECTORIES
+    //make a directory
+    fs.mkdir('relative path', (err)=>{
+
+    }
+    )
+    //check if a directory or file exists
+    fs.existsSync('relative path')
+    //delete directory
+    fs.rmdir('relative path',(err)=>{
+
+    })
+    //delete files
+    fs.unlink('relativepath', (err)=>{
+
+    })
+
