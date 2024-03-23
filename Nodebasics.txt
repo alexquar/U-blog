@@ -1,0 +1,15 @@
+//global object
+-Similar to window in web dev
+-when working in the browser the window is the global object
+
+
+//_dirname and _filename
+-gets you the absolute path of folder you are in and abosolute path of folder with filename added on at end
+
+
+//things you don't have access to 
+-document object querySelector method
+-still have setTimeout and setInterval .....
+
+//modules and require
+-
