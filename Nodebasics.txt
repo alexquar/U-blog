@@ -12,4 +12,20 @@
 -still have setTimeout and setInterval .....
 
 //modules and require
--
+-const varname = require('relative filepath')
+    - this will run the file inside ()
+-the var will be an empty object and you do not get access to the vars in the other file
+-to get access from the relative file you have to export the stuff you want to get 
+    -in the relative file you have to do this
+    -module.exports = { name : var, name : var, functname : func, ----- }
+    - varname will now be equal to what you exported
+-could way to take stuff in is to destructure
+    -const {samename , samename} = require('relative filepath')
+
+//os built in
+const os = require('os') //built in os node file
+-to get operating system
+    -os.platform()
+-to get home dir 
+    -os.homedir()
+
