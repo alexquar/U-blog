@@ -1,1 +1,14 @@
 //Clients and Servers
+
+ //setting up a server
+ -server.js
+    const http = require('http')
+const server = http.createServer( (req, res)=>{
+//fires on requests
+})
+
+server.listen(3000 //portnum,'localhost',()=>{    //localhost is just for local development
+//listening for requests and fires a function at first
+})
+
+-can now go to your server at localhost:3000
