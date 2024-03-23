@@ -62,3 +62,16 @@ fs.writeFile('relativefilepath','text to write', ()=>{
 
     })
 
+//streams and buffers
+using data as it is pulled in instead of waiting for all of it
+    //read
+    const readStream = fs.createReadStream('relativepath', {encoding : 'utf8'} //puts chunks in readable format)
+    readStream.on('data', (chunk)=>{
+
+    })
+
+    //write
+    const writeStream = fs.createWriteStream('relativepath');
+    writeStream.write(-----);
+//pipe
+readStream.pipe(writeStream);
