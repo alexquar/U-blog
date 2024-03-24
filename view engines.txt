@@ -9,3 +9,14 @@ near top in app.js
 -to render an ejs file
     -instead of sendfile like with html
     res.render('filename no extension')
+
+//creating dynamic ejs pages
+include any js inside <% ------- %>
+to input a value <%= varname %>
+can pass in vars on render 
+    res.render('filename no extension',{varname : value})
+
+-to include code from another file
+<%- include("relative path") %>
+
+-can use all normal logic like if and else and forEach with some wonky brackets check with index.ejs ... god I miss vue
