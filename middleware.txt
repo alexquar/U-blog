@@ -1,0 +1,16 @@
+//code that runs in app.js middleware
+-created using the app.use func
+ex app.use((req,res,next)=>{
+------
+next();
+})
+-must use next() to tell it to move on 
+-order matters as we've seen with 404 catching
+
+
+//3rd party middleware
+-tons of options............
+
+//adding static files
+-add this app.use(express.static('public'));
+-put all static files in a public folder
