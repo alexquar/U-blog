@@ -12,3 +12,18 @@
     })
 
 //routing and html
+    app.get('/', (req,res)=>{
+    res.sendFile('relative path', {root: __dirname});
+    })
+
+//redirects and 404
+
+-redirect
+app.get('/old path', (req,res)=>{
+        res.redirect('/new path');
+        })
+
+-404 page put this at bottom 
+app.use((req,res)=>{
+res.status(404).sendFile('relative path to 404 page', {root: __dirname})
+})
