@@ -1,0 +1,9 @@
+//basics of npm
+-Already know
+-npm install name
+-gloabl install 
+    -npm install -g name
+-nodemon for dev environment 
+-just say nodemon servername and it live reloads
+-to get a package.json file run npm init
+-require('lodash")
