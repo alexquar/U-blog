@@ -1,0 +1,14 @@
+//start
+-npm install express
+-Create an app.js file
+    const express = require('express')
+    const app = express();
+    const listen = app.listen(port);
+
+    app.get('path', (req,res)=>{
+
+    res.send();
+
+    })
+
+//routing and html

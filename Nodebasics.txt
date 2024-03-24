@@ -7,7 +7,7 @@
 -when working in the browser the window is the global object
 
 
-//_dirname and _filename
+//__dirname and __filename
 -gets you the absolute path of folder you are in and abosolute path of folder with filename added on at end
 
 
