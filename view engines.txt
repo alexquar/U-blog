@@ -1,0 +1,11 @@
+//View engines 
+
+-Ejs
+npm install ejs
+near top in app.js 
+    app.set('view engine', 'ejs')
+
+-files are .ejs extension
+-to render an ejs file
+    -instead of sendfile like with html
+    res.render('filename no extension')
