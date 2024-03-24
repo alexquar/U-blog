@@ -1,3 +1,7 @@
+    -Run a file with node 
+    -node filename in terminal
+
+
 //global object
 -Similar to window in web dev
 -when working in the browser the window is the global object

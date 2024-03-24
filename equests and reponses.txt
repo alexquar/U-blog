@@ -1,0 +1,58 @@
+//requests
+-the request object is a massive object
+-couple important things are req.url and req.method (post, get, ...)
+
+//response
+-returning content to the browser
+-ex inside http.createServer()
+    res.setHeader('Content-Type', 'text/plain or text-html');
+    res.write('hello,ninjas or <p> something </p>');
+    res.end();
+-can make as many writes as you want for html elements
+-can also write for the <head>
+
+-to pull from an html file and return
+    const fs = require('fs')
+    const server = http.createServer( (req, res)=>{
+    res.setHeader('Content-Type', 'text/html');
+    fs.readFile('./views/index.html', (err, data)=>{
+    if(err){
+    console.log(err);
+    res.end()
+    } else {
+     res.write(data)
+     res.end()
+     }
+    })
+    })
+
+//basic routing
+example with files in a views folder
+
+const server = http.createServer( (req, res)=>{
+res.setHeader('Content-Type', 'text/html');
+let header = './views/'
+
+switch(req.url){
+    case '/': 
+        path+='index.html'
+        break;
+    case '/about':
+        path+='about.html'
+        break;
+    default:
+        path+='404.html'
+        breakl;
+}
+
+
+fs.readFile(path, (err, data)=>{
+ if(err){
+    console.log(err);
+    res.end()
+ } else {
+    res.write(data)
+    res.end()
+ }
+})
+})
