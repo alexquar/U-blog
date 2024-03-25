@@ -1,0 +1,85 @@
+//using atlas
+https://cloud.mongodb.com/v2/65cd65f557e1e03e60313705#/overview
+-create db, free
+-add data, put in a db and collection name
+-connect, divers, copy string, npm install mongoDB
+-const dbURI = 'string' add db name before ?
+
+
+//mongoose
+-library to easily interact with mongoDB
+-npm install mongoose
+setup
+const dbURI = 'mongodb+srv://alexanderquarrie:UPassword@blogdb.mdgyuqz.mongodb.net/blogdb'
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+  app.listen(3000);
+}).catch((err)=>{
+  console.log(err)
+})
+
+//Setting up a schema
+-inside a models folder, and a thing.js file
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema
+
+const thingSchema = new Schema({
+    title: {
+        type: String,
+        required: true,
+      },
+      snippet: {
+        type: String,
+        required: true,
+      },
+      body: {
+        type: String,
+        required: true
+      },
+    }, 
+    { timestamps: true 
+    });
+
+    //just stuff you want it to have
+
+
+    const Thing = mongoose.model('blog' //this is the singular of the collection name, thingSchema);
+    module.exports = Thing;
+
+
+//getting and saving data
+const Schemaname = require('relative path')
+
+-Setting
+  const name = new schemaname({
+   set all properties
+  });
+  name.save().then((result)=>{
+    
+  }).catch((err)=>{
+    console.log(err)
+  })
+
+-getting all
+Collection.find()
+    .then(result => {
+    })
+    .catch(err => {
+      console.log(err);
+    });
+-getting one by id
+  Collection.findById('id')
+    .then(result => {
+      
+    })
+    .catch(err => {
+      console.log(err);
+    });
+
+//Sorting
+ Collectioin.find().sort({ property: -1/1 })
+    .then(result => {
+      
+    })
+    .catch(err => {
+      console.log(err);
+    });
