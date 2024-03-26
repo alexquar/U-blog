@@ -1,0 +1,11 @@
+//post 
+-give the from action="/something" method="POST"
+-all inputs should have name="attribute"
+
+-add this in app.js at top 
+app.use(express.urlencoded({entexted : true}))
+
+-add this post method to take in the data
+app.post('/something', (req,res)=>{
+console.log(req.body)
+})

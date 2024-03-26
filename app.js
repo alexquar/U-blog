@@ -14,11 +14,7 @@ app.set('view engine', 'ejs');
 
 // middleware & static files
 app.use(express.static('public'));
-app.use(morgan('dev'));
-app.use((req, res, next) => {
-  res.locals.path = req.path;
-  next();
-});
+app.use(express.urlencoded({entexted : true}))
 
 // mongoose & mongo tests
 app.get('/add-blog', (req, res) => {
@@ -62,7 +58,15 @@ app.get('/blogs', (req, res) => {
     });
 });
 
-// 404 page
+app.post('/blogs', (req,res)=>{
+const blog = new Blog(req.body);
+blog.save().then ( (result)=>{
+res.redirect('/blogs')
+}).catch( err => console.log(err))
+})
+
+
+
 app.use((req, res) => {
   res.status(404).render('404', { title: '404' });
 });
