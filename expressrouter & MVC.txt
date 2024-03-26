@@ -1,0 +1,17 @@
+//router
+-Add similar route handlers into a new file inside the route folder
+-Add this
+const express = require('express');
+const router = express.Router();
+-In all the methods swap app for router
+-At the bottom add this 
+ module.exports = router;
+-Now inside your app.js at top
+const somethingRoutes = require('relative path')
+-At bottom of app
+app.use('/common beginning of routes you are taking are of',somethingRoutes)
+
+
+
+//MVC
+-Model, view, controller
