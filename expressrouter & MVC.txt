@@ -15,3 +15,8 @@ app.use('/common beginning of routes you are taking are of',somethingRoutes)
 
 //MVC
 -Model, view, controller
+-idea of putting all functions in controllers
+-views inside view 
+-models inside model
+-Then likning together
+    -using module.exports = ---- and const something = require('something')
