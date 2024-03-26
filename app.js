@@ -48,6 +48,18 @@ app.get('/blogs/create', (req, res) => {
   res.render('create', { title: 'Create a new blog' });
 });
 
+app.get('/blogs/:id', (req,res)=>{
+  const id = req.params.id
+  Blog.findById(id).then(result => {
+    res.render('details', {blog:result, title : "Blog Details"})
+  }).catch(err => console.log(err))
+})
+app.delete('/blogs/:id', (req,res)=>{
+  const id = req.params.id;
+  Blog.findByIdAndDelete(id).then(result => {
+    res.json({redirect:'/blogs'})
+  })
+})
 app.get('/blogs', (req, res) => {
   Blog.find().sort({ createdAt: -1 })
     .then(result => {

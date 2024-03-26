@@ -7,5 +7,34 @@ app.use(express.urlencoded({entexted : true}))
 
 -add this post method to take in the data
 app.post('/something', (req,res)=>{
-console.log(req.body)
+const thing = new Thing(req.body);
+thing.save().then ( (result)=>{
+res.redirect('/somewhere')
+}).catch( err => console.log(err))
 })
+
+
+//route params
+-Going to the route
+        <a ref="/something/<%=object._id%>">
+        ------
+        </a>
+-dealing with the get request example
+app.get('/something/:id', (req,res)=>{
+  const id = req.params.id
+  Thing.findById(id).then(result => {
+    res.render('details', {thing:result})
+  }).catch(err => console.log(err))
+})
+
+
+//deleting
+-emit a delete inside js check out details.ejs
+-then inside app.js
+app.delete('/something/:id', (req,res)=>{
+  const id = req.params.id;
+  Thing.findByIdAndDelete(id).then(result => {
+    res.json({redirect:'/somewhere'})
+  })
+})
+
